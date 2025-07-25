@@ -164,6 +164,20 @@ All colors MUST be HSL.
   .card-hover {
     @apply transition-all duration-300 hover:shadow-large hover:-translate-y-1;
   }
+
+  /* Border animation on hover */
+  .hover-border-glow {
+    @apply relative transition-all duration-300;
+  }
+  
+  .hover-border-glow::after {
+    @apply absolute inset-0 rounded-lg border-2 border-primary opacity-0 transition-opacity duration-300 pointer-events-none;
+    content: '';
+  }
+  
+  .hover-border-glow:hover::after {
+    @apply opacity-100;
+  }
 }
 
 @layer utilities {

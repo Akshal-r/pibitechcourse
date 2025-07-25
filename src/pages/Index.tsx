@@ -5,7 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import ContactModal from "@/components/ContactModal";
 import FeatureCard from "@/components/FeatureCard";
 import ModuleCard from "@/components/ModuleCard";
-import heroImage from "@/assets/hero-ai-illustration.jpg";
+import Navbar from "@/components/Navbar";
+import HeroCarousel from "@/components/HeroCarousel";
 import {
   Rocket,
   Code,
@@ -166,8 +167,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navbar />
+      
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
+      <section id="hero" className="relative py-20 lg:py-32 overflow-hidden mt-16">
         <div className="absolute inset-0 bg-gradient-hero opacity-5"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -207,18 +210,14 @@ const Index = () => {
               </div>
             </div>
             <div className="fade-in-up lg:fade-in">
-              <img 
-                src={heroImage} 
-                alt="AI Product Development Illustration" 
-                className="w-full h-auto rounded-2xl shadow-large"
-              />
+              <HeroCarousel />
             </div>
           </div>
         </div>
       </section>
 
       {/* What You Actually Get */}
-      <section className="py-20 bg-muted/30">
+      <section id="features" className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 fade-in-up">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">What You Actually Get</h2>
@@ -241,7 +240,7 @@ const Index = () => {
       </section>
 
       {/* Full-Stack AI Curriculum */}
-      <section className="py-20">
+      <section id="curriculum" className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 fade-in-up">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
@@ -297,7 +296,7 @@ const Index = () => {
       </section>
 
       {/* Program Details */}
-      <section className="py-20">
+      <section id="details" className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 fade-in-up">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">Program Details</h2>
