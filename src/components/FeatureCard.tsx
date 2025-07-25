@@ -16,7 +16,7 @@ const FeatureCard = ({ icon: Icon, title, description, delay = "0ms" }: FeatureC
     >
       <CardContent className="p-6 space-y-4">
         <div className="mx-auto w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center shadow-medium">
-          <Icon className="h-6 w-6 text-white" />
+          <Icon className="h-6 w-6 text-primary-foreground" />
         </div>
         <div className="space-y-2">
           <h3 className="font-semibold text-card-foreground text-lg">
