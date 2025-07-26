@@ -18,20 +18,20 @@ const HeroCarousel = () => {
   const images = [
     {
       src: heroImage1,
-      alt: "AI Product Development Illustration"
+      alt: "AI Product Development Illustration",
     },
     {
       src: heroImage2,
-      alt: "AI Development Workstation"
+      alt: "AI Development Workstation",
     },
     {
       src: heroImage3,
-      alt: "Team Collaboration on AI Projects"
+      alt: "Team Collaboration on AI Projects",
     },
     {
       src: heroImage4,
-      alt: "Futuristic AI Technology"
-    }
+      alt: "Futuristic AI Technology",
+    },
   ];
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const HeroCarousel = () => {
     // Auto-scroll carousel
     const interval = setInterval(() => {
       api.scrollNext();
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [api]);
@@ -68,17 +68,15 @@ const HeroCarousel = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-auto rounded-2xl shadow-large object-cover aspect-video"
+                  className="w-full h-auto rounded-2xl shadow-large object-cover aspect-video border-2 border-blue-800"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl" />
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-4 bg-background/80 backdrop-blur-sm border-border hover:bg-background" />
-        <CarouselNext className="right-4 bg-background/80 backdrop-blur-sm border-border hover:bg-background" />
       </Carousel>
-      
+
       {/* Carousel Indicators */}
       <div className="flex justify-center space-x-2 mt-4">
         {images.map((_, index) => (

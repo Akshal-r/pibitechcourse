@@ -33,24 +33,26 @@ const Index = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const handleDownloadBrochure = () => {
-    // Create a mock PDF download
-    const link = document.createElement('a');
-    link.href = '#';
-    link.download = 'pi-bi-tech-ai-program-brochure.pdf';
-    // In a real implementation, this would link to an actual PDF
-    alert('PDF brochure download would start here. In production, this would link to the actual PDF file.');
+    const link = document.createElement("a");
+    link.href = "/AI Product Developer Certification Program.pdf"; // Relative to public/
+    link.download = "AI Product Developer Certification Program.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const features = [
     {
       icon: Rocket,
       title: "Launch your own AI-powered product",
-      description: "Not a simulation or group project. Your idea, built from scratch and deployed live.",
+      description:
+        "Not a simulation or group project. Your idea, built from scratch and deployed live.",
     },
     {
       icon: Users,
       title: "Pitch to real VCs with mentorship",
-      description: "Refine your deck, sharpen your story, and meet actual investors.",
+      description:
+        "Refine your deck, sharpen your story, and meet actual investors.",
     },
     {
       icon: Award,
@@ -60,12 +62,14 @@ const Index = () => {
     {
       icon: Github,
       title: "Build a GitHub-backed portfolio",
-      description: "Show off your code, ship a working demo, and prove your skills.",
+      description:
+        "Show off your code, ship a working demo, and prove your skills.",
     },
     {
       icon: Briefcase,
       title: "Unlock placement support",
-      description: "With resume reviews, mock interviews, and referrals to top product companies.",
+      description:
+        "With resume reviews, mock interviews, and referrals to top product companies.",
     },
   ];
 
@@ -73,62 +77,74 @@ const Index = () => {
     {
       number: "1",
       title: "AI Product Design & Prototyping",
-      description: "Design thinking, user personas, user journeys, rapid prototyping using tools like Figma, Miro, Voiceflow.",
+      description:
+        "Design thinking, user personas, user journeys, rapid prototyping using tools like Figma, Miro, Voiceflow.",
     },
     {
-      number: "2", 
+      number: "2",
       title: "Programming Fundamentals & Backend Setup",
-      description: "Python, Go, and JS fundamentals, REST APIs, JSON, LLM integration using FastAPI and Postman.",
+      description:
+        "Python, Go, and JS fundamentals, REST APIs, JSON, LLM integration using FastAPI and Postman.",
     },
     {
       number: "3",
-      title: "Full-Stack App Development", 
-      description: "Build UIs with React and Tailwind, backend with Flask/FastAPI, connect AI APIs to DB.",
+      title: "Full-Stack App Development",
+      description:
+        "Build UIs with React and Tailwind, backend with Flask/FastAPI, connect AI APIs to DB.",
     },
     {
       number: "4",
       title: "Databases for AI",
-      description: "RDBMS, NoSQL, vector databases, graph databases like PostgreSQL, MongoDB, Neo4j, Pinecone.",
+      description:
+        "RDBMS, NoSQL, vector databases, graph databases like PostgreSQL, MongoDB, Neo4j, Pinecone.",
     },
     {
       number: "5",
       title: "Data Engineering & Pipelines",
-      description: "Build ETL/ELT pipelines, perform data cleaning, batch vs streaming using Airflow, Pandas, Spark.",
+      description:
+        "Build ETL/ELT pipelines, perform data cleaning, batch vs streaming using Airflow, Pandas, Spark.",
     },
     {
       number: "6",
       title: "AI & ML Essentials",
-      description: "ML lifecycle, supervised learning, feature engineering, model evaluation, deployment with Scikit-learn and TensorFlow.",
+      description:
+        "ML lifecycle, supervised learning, feature engineering, model evaluation, deployment with Scikit-learn and TensorFlow.",
     },
     {
       number: "7",
       title: "Generative AI & LLMs",
-      description: "GPT-4, Claude, Mistral, Llama3, prompt engineering, and LLM app development using LangChain and Hugging Face.",
+      description:
+        "GPT-4, Claude, Mistral, Llama3, prompt engineering, and LLM app development using LangChain and Hugging Face.",
     },
     {
       number: "8",
       title: "Retrieval-Augmented Generation (RAG)",
-      description: "Chunking, embedding pipelines, retrieval systems using FAISS, Weaviate, LangChain.",
+      description:
+        "Chunking, embedding pipelines, retrieval systems using FAISS, Weaviate, LangChain.",
     },
     {
       number: "9",
       title: "AI Agents & Agentic Workflows",
-      description: "Agent architecture, planning, memory, execution, tools like CrewAI, LangGraph, AutoGPT.",
+      description:
+        "Agent architecture, planning, memory, execution, tools like CrewAI, LangGraph, AutoGPT.",
     },
     {
       number: "10",
       title: "Cloud & DevOps for AI",
-      description: "Docker, GitLab CI/CD, microservices, deployment to AWS/GCP, API gateway setup.",
+      description:
+        "Docker, GitLab CI/CD, microservices, deployment to AWS/GCP, API gateway setup.",
     },
     {
       number: "11",
       title: "AI Product Strategy & Business",
-      description: "Build business models, understand governance, ethics, and monetization strategies.",
+      description:
+        "Build business models, understand governance, ethics, and monetization strategies.",
     },
     {
       number: "12",
       title: "Go-To-Market & Product-Led Growth",
-      description: "Positioning, messaging, PLG frameworks, feedback loops using tools like HubSpot, Mixpanel, SEMrush.",
+      description:
+        "Positioning, messaging, PLG frameworks, feedback loops using tools like HubSpot, Mixpanel, SEMrush.",
     },
   ];
 
@@ -136,7 +152,8 @@ const Index = () => {
     {
       icon: Target,
       title: "You ship a real product",
-      description: "A full-stack, AI-powered app that's demoable, fundable, and hosted.",
+      description:
+        "A full-stack, AI-powered app that's demoable, fundable, and hosted.",
     },
     {
       icon: Star,
@@ -146,31 +163,38 @@ const Index = () => {
     {
       icon: TrendingUp,
       title: "You pitch to VCs",
-      description: "Build a real pitch deck, get feedback, and access our investor network.",
+      description:
+        "Build a real pitch deck, get feedback, and access our investor network.",
     },
     {
       icon: Zap,
       title: "Your product goes live",
-      description: "We provide hosting and GTM support to make sure it doesn't sit in a folder.",
+      description:
+        "We provide hosting and GTM support to make sure it doesn't sit in a folder.",
     },
     {
       icon: Trophy,
       title: "You leave with proof",
-      description: "Internship certificate, GitHub portfolio, and a working product.",
+      description:
+        "Internship certificate, GitHub portfolio, and a working product.",
     },
     {
       icon: Briefcase,
       title: "You get placement support",
-      description: "We help you land roles in top product companies — not just list job boards.",
+      description:
+        "We help you land roles in top product companies — not just list job boards.",
     },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
-      <section id="hero" className="relative py-20 lg:py-32 overflow-hidden mt-16">
+      <section
+        id="hero"
+        className="relative py-20 lg:py-32 overflow-hidden mt-16"
+      >
         <div className="absolute inset-0 bg-gradient-hero opacity-5"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -187,24 +211,27 @@ const Index = () => {
                   Build, Pitch & Launch Your Own AI App
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-lg">
-                  We don't make you learn AI; we make you build it. In just 45 days, you'll design, build, deploy, and pitch your own AI product — and you'll own every line of it.
+                  We don't make you learn AI; we make you build it.
+                  <br></br>
+                  In just 45 days, you'll design, build, deploy, and pitch your
+                  own AI product — and you'll own every line of it.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="btn-primary text-lg px-8 py-6"
                   onClick={() => setIsContactModalOpen(true)}
                 >
                   Join the Course
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="btn-secondary text-lg px-8 py-6"
                   onClick={handleDownloadBrochure}
                 >
-                  <Download className="mr-2 h-5 w-5" />
+                  <Download className="mr-2 h-5 w-5 text-white" />
                   Download Brochure
                 </Button>
               </div>
@@ -220,7 +247,9 @@ const Index = () => {
       <section id="features" className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 fade-in-up">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">What You Actually Get</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              What You Actually Get
+            </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Real outcomes, not just certificates
             </p>
@@ -244,10 +273,12 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 fade-in-up">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              Full-Stack AI. Every Layer. <span className="gradient-text">No Fluff.</span>
+              Full-Stack AI. Every Layer.{" "}
+              <span className="gradient-text">No Fluff.</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              You'll master the complete AI product lifecycle — from idea to code to cloud to business.
+              You'll master the complete AI product lifecycle — from idea to
+              code to cloud to business.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -268,7 +299,9 @@ const Index = () => {
                 <h3 className="text-2xl font-bold">Capstone Project</h3>
               </div>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                You'll apply everything by building your own AI product — prototype to MVP to deployment — and prepare it for pitch and launch.
+                You'll apply everything by building your own AI product —
+                prototype to MVP to deployment — and prepare it for pitch and
+                launch.
               </p>
             </CardContent>
           </Card>
@@ -279,7 +312,9 @@ const Index = () => {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 fade-in-up">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">What Makes This Program Different</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              What Makes This Program Different
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {differentiators.map((item, index) => (
@@ -299,7 +334,9 @@ const Index = () => {
       <section id="details" className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 fade-in-up">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">Program Details</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              Program Details
+            </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <Card className="card-hover bg-gradient-card border-border text-center fade-in-up">
@@ -309,21 +346,30 @@ const Index = () => {
                 <p className="text-muted-foreground">60 hours</p>
               </CardContent>
             </Card>
-            <Card className="card-hover bg-gradient-card border-border text-center fade-in-up" style={{ animationDelay: '100ms' }}>
+            <Card
+              className="card-hover bg-gradient-card border-border text-center fade-in-up"
+              style={{ animationDelay: "100ms" }}
+            >
               <CardContent className="p-6">
                 <Calendar className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold text-lg mb-2">Timeline</h3>
                 <p className="text-muted-foreground">45 days</p>
               </CardContent>
             </Card>
-            <Card className="card-hover bg-gradient-card border-border text-center fade-in-up" style={{ animationDelay: '200ms' }}>
+            <Card
+              className="card-hover bg-gradient-card border-border text-center fade-in-up"
+              style={{ animationDelay: "200ms" }}
+            >
               <CardContent className="p-6">
                 <Monitor className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold text-lg mb-2">Format</h3>
                 <p className="text-muted-foreground">Online (Live + async)</p>
               </CardContent>
             </Card>
-            <Card className="card-hover bg-gradient-card border-border text-center fade-in-up" style={{ animationDelay: '300ms' }}>
+            <Card
+              className="card-hover bg-gradient-card border-border text-center fade-in-up"
+              style={{ animationDelay: "300ms" }}
+            >
               <CardContent className="p-6">
                 <Users className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold text-lg mb-2">Batches</h3>
@@ -331,7 +377,7 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
-          
+
           <Card className="bg-gradient-card border-border fade-in-up">
             <CardContent className="p-8">
               <div className="grid md:grid-cols-2 gap-8">
@@ -341,7 +387,8 @@ const Index = () => {
                     Level & Prerequisites
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    <strong>Intermediate</strong> - Ideal for students, career switchers, and early-career developers
+                    <strong>Intermediate</strong> - Ideal for students, career
+                    switchers, and early-career developers
                   </p>
                 </div>
                 <div>
@@ -350,7 +397,8 @@ const Index = () => {
                     Outcome
                   </h3>
                   <p className="text-muted-foreground">
-                    A launched AI product, internship-grade experience, pitch readiness, and job-focused skills
+                    A launched AI product, internship-grade experience, pitch
+                    readiness, and job-focused skills
                   </p>
                 </div>
               </div>
@@ -371,20 +419,19 @@ const Index = () => {
               And turn your skill set into a career.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-white text-primary hover:bg-white/90 text-lg px-12 py-6 shadow-large"
                 onClick={() => setIsContactModalOpen(true)}
               >
                 Join the Course
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-primary text-lg px-12 py-6"
+              <Button
+                size="lg"
+                className="bg-white text-primary hover:bg-white/90 text-lg px-12 py-6 shadow-large"
                 onClick={handleDownloadBrochure}
               >
-                <Download className="mr-2 h-5 w-5" />
+                <Download className="mr-2 h-5 w-5 " />
                 Download Brochure
               </Button>
             </div>
@@ -392,9 +439,9 @@ const Index = () => {
         </div>
       </section>
 
-      <ContactModal 
-        isOpen={isContactModalOpen} 
-        onClose={() => setIsContactModalOpen(false)} 
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
       />
     </div>
   );

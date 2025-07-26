@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, Link } from "lucide-react";
 import { useTheme } from "next-themes";
 
 const Navbar = () => {
@@ -12,22 +12,39 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <h1 className="text-xl font-bold gradient-text">Pi Bi Tech</h1>
-          </div>
-
+          <a href="https://www.pibitech.com/" target="blank" className="">
+            <div className="flex items-center space-x-4 ">
+              <img
+                src="/images/pibitechlogo.png"
+                alt="Pi Bi Tech Logo"
+                className="h-12 w-12 object-contain"
+              />
+              <span className="text-xl font-bold leading-none gradient-text bg-blue-500 py-5">
+                Pi Bi Technologies
+              </span>
+            </div>
+          </a>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-foreground hover:text-primary transition-colors">
+            <a
+              href="#features"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Features
             </a>
-            <a href="#curriculum" className="text-foreground hover:text-primary transition-colors">
+            <a
+              href="#curriculum"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Curriculum
             </a>
-            <a href="#details" className="text-foreground hover:text-primary transition-colors">
+            <a
+              href="#details"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Details
             </a>
-            
+
             {/* Theme Toggle */}
             <Button
               variant="ghost"
@@ -58,7 +75,11 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="hover:bg-accent"
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -67,22 +88,22 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col space-y-4">
-              <a 
-                href="#features" 
+              <a
+                href="#features"
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Features
               </a>
-              <a 
-                href="#curriculum" 
+              <a
+                href="#curriculum"
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Curriculum
               </a>
-              <a 
-                href="#details" 
+              <a
+                href="#details"
                 className="text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsOpen(false)}
               >
