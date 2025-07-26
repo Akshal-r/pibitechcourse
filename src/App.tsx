@@ -14,7 +14,6 @@ const queryClient = new QueryClient();
 const App = () => (
   <HelmetProvider>
     <Helmet>
-      <title>AI Product Development Program</title>
       <link rel="icon" href="/favicon.ico" />
     </Helmet>
     <QueryClientProvider client={queryClient}>
