@@ -52,7 +52,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email, phone }),
+          body: JSON.stringify({ name, email, phone }),
         }
       );
 
