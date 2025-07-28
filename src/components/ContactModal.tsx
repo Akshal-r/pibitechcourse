@@ -46,7 +46,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
     try {
       const response = await fetch(
-        "https://pibitech-backend-olwb.onrender.com",
+        "https://pibitech-backend-olwb.onrender.com/datat",
         {
           method: "POST",
           headers: {
