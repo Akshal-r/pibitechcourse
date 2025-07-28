@@ -46,13 +46,13 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
     try {
       const response = await fetch(
-        "https://pibitech-backend-olwb.onrender.com/datat",
+        "https://pibitech-backend-olwb.onrender.com/data",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({ email, phone }),
         }
       );
 
