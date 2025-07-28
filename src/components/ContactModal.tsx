@@ -45,13 +45,16 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/data", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://pibitech-backend-olwb.onrender.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const result = await response.json();
 
