@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-
+import Admin from "./pages/Admin";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 
 const queryClient = new QueryClient();
@@ -29,7 +29,7 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="/admin" element={<Admin />} />{" "}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
