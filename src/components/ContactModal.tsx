@@ -68,7 +68,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             "We'll be in touch with you soon about the AI Product Developer Program.",
         });
 
-        const brochureUrl = "/brochure.pdf";
+        const brochureUrl = "/AI Product Developer Certification Program.pdf";
         const link = document.createElement("a");
         link.href = brochureUrl;
         link.download = "AI_Developer_Brochure.pdf";
