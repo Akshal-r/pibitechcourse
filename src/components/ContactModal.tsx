@@ -24,8 +24,11 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     phone: "",
   });
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -64,6 +67,15 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
           description:
             "We'll be in touch with you soon about the AI Product Developer Program.",
         });
+
+        const brochureUrl = "/brochure.pdf";
+        const link = document.createElement("a");
+        link.href = brochureUrl;
+        link.download = "AI_Developer_Brochure.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
         setFormData({ name: "", email: "", phone: "" });
         onClose();
       } else {
@@ -85,49 +97,49 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md bg-white dark:bg-card">
+      <DialogContent>
         <DialogHeader>
-          <DialogTitle className="text-xl font-semibold text-gradient">
-            Join the AI Product Developer Program
+          <DialogTitle className="text-xl">
+            Get the Brochure – Start Your AI Journey!
           </DialogTitle>
         </DialogHeader>
-
-        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Full Name *</Label>
+            <Label htmlFor="name">Name</Label>
             <Input
               id="name"
-              type="text"
+              name="name"
               value={formData.name}
-              onChange={(e) => handleInputChange("name", e.target.value)}
-              placeholder="Enter your name"
+              onChange={handleChange}
+              placeholder="Enter your full name"
               required
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="email">Email *</Label>
+            <Label htmlFor="email">Email</Label>
             <Input
               id="email"
-              type="email"
+              name="email"
               value={formData.email}
-              onChange={(e) => handleInputChange("email", e.target.value)}
+              onChange={handleChange}
               placeholder="Enter your email"
+              type="email"
               required
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="phone">Phone *</Label>
+            <Label htmlFor="phone">Phone Number</Label>
             <Input
               id="phone"
-              type="tel"
+              name="phone"
               value={formData.phone}
-              onChange={(e) => handleInputChange("phone", e.target.value)}
+              onChange={handleChange}
               placeholder="Enter your phone number"
               required
             />
           </div>
-          <Button type="submit" className="w-full mt-4">
-            Submit
+          <Button type="submit" className="w-full">
+            Submit & Download Brochure
           </Button>
         </form>
       </DialogContent>
