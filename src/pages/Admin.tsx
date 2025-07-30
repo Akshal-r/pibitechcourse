@@ -22,7 +22,7 @@ const AdminPanel: React.FC = () => {
   const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
   const STUDENTS_URL = "https://pibitech-backend.onrender.com/students";
-  const BROCHURE_URL = "https://pibitech-backend.onrender.com/brochure";
+  const BROCHURE_URL = "https://pibitech-backend.onrender.com/downloads";
 
   const fetchData = async () => {
     try {
