@@ -115,7 +115,7 @@ const AdminPanel: React.FC = () => {
       </div>
 
       <div>
-        <h2 className="text-xl font-semibold mb-4">Brochure Downloads</h2>
+        <h2 className="text-xl font-semibold mb-4">Brochure Downloads lists</h2>
         {brochures.length > 0 ? (
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm border">
