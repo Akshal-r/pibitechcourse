@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Admin from "./pages/Admin";
 import { HelmetProvider, Helmet } from "react-helmet-async";
+import { Analytics } from "@vercel/analytics/react";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
         enableSystem
         disableTransitionOnChange
       >
+        <Analytics />
         <TooltipProvider>
           <Toaster />
           <Sonner />

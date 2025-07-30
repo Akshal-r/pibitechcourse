@@ -7,6 +7,7 @@ import FeatureCard from "@/components/FeatureCard";
 import ModuleCard from "@/components/ModuleCard";
 import Navbar from "@/components/Navbar";
 import HeroCarousel from "@/components/HeroCarousel";
+import BrochureForm from "@/components/BrochureForm";
 import {
   Rocket,
   Code,
@@ -31,10 +32,11 @@ import {
 
 const Index = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isBrochureFormOpen, setIsBrochureFormOpen] = useState(false);
 
   const handleDownloadBrochure = () => {
     const link = document.createElement("a");
-    link.href = "/AI Product Developer Certification Program.pdf"; // Relative to public/
+    link.href = "/AI Product Developer Certification Program.pdf";
     link.download = "AI Product Developer Certification Program.pdf";
     document.body.appendChild(link);
     link.click();
@@ -442,6 +444,11 @@ const Index = () => {
       <ContactModal
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
+      />
+
+      <BrochureForm
+        isOpen={isBrochureFormOpen}
+        onClose={() => setIsBrochureFormOpen(false)}
       />
     </div>
   );
