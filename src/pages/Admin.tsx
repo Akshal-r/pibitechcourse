@@ -15,7 +15,7 @@ const AdminPanel: React.FC = () => {
   const ADMIN_USERNAME = import.meta.env.VITE_ADMIN_USERNAME;
   const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
-  const BACKEND_URL = "https://pibitech-backend-olwb.onrender.com/students";
+  const BACKEND_URL = "https://pibitech-backend.onrender.com/students";
 
   const fetchStudents = async () => {
     try {
