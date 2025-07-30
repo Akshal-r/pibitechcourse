@@ -86,7 +86,6 @@ const AdminPanel: React.FC = () => {
     <div className="min-h-screen bg-gray-100 p-6">
       <h1 className="text-2xl font-semibold mb-6">Admin Panel</h1>
 
-      {/* Student Registrations */}
       <div className="mb-10">
         <h2 className="text-xl font-semibold mb-4">Registered Students</h2>
         {students.length > 0 ? (
@@ -115,7 +114,6 @@ const AdminPanel: React.FC = () => {
         )}
       </div>
 
-      {/* Brochure Downloads */}
       <div>
         <h2 className="text-xl font-semibold mb-4">Brochure Downloads</h2>
         {brochures.length > 0 ? (
