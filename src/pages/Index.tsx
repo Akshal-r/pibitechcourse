@@ -34,15 +34,6 @@ const Index = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isBrochureFormOpen, setIsBrochureFormOpen] = useState(false);
 
-  const handleDownloadBrochure = () => {
-    const link = document.createElement("a");
-    link.href = "/AI Product Developer Certification Program.pdf";
-    link.download = "AI Product Developer Certification Program.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const features = [
     {
       icon: Rocket,
@@ -231,7 +222,7 @@ const Index = () => {
                   size="lg"
                   variant="outline"
                   className="btn-secondary text-lg px-8 py-6"
-                  onClick={handleDownloadBrochure}
+                  onClick={() => setIsBrochureFormOpen(false)}
                 >
                   <Download className="mr-2 h-5 w-5 text-white" />
                   Download Brochure
@@ -431,7 +422,7 @@ const Index = () => {
               <Button
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90 text-lg px-12 py-6 shadow-large"
-                onClick={handleDownloadBrochure}
+                onClick={setIsBrochureFormOpen}
               >
                 <Download className="mr-2 h-5 w-5 " />
                 Download Brochure
