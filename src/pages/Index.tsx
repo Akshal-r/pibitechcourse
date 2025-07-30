@@ -222,7 +222,7 @@ const Index = () => {
                   size="lg"
                   variant="outline"
                   className="btn-secondary text-lg px-8 py-6"
-                  onClick={() => setIsBrochureFormOpen(false)}
+                  onClick={() => setIsBrochureFormOpen(true)}
                 >
                   <Download className="mr-2 h-5 w-5 text-white" />
                   Download Brochure

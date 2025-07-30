@@ -4,6 +4,7 @@
 import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
 
 interface BrochureFormProps {
   isOpen: boolean;
@@ -14,7 +15,6 @@ const BrochureForm: React.FC<BrochureFormProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +26,7 @@ const BrochureForm: React.FC<BrochureFormProps> = ({ isOpen, onClose }) => {
 
     try {
       const res = await fetch(
-        "https://pibitech-backend.onrender.com/brochure",
+        "https://pibitech-backend.onrender.com/log-download",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -41,7 +41,7 @@ const BrochureForm: React.FC<BrochureFormProps> = ({ isOpen, onClose }) => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        onClose(); // Close the modal after download
+        onClose();
       } else {
         alert("Error submitting form");
       }
@@ -53,7 +53,16 @@ const BrochureForm: React.FC<BrochureFormProps> = ({ isOpen, onClose }) => {
   return (
     <Dialog open={isOpen} onClose={onClose} className="fixed z-50 inset-0">
       <div className="flex items-center justify-center min-h-screen bg-black/50">
-        <div className="bg-white rounded-lg p-6 w-full max-w-md space-y-4">
+        <div className="bg-white rounded-lg p-6 w-full max-w-md relative space-y-4">
+          {/* Close button */}
+          <button
+            onClick={onClose}
+            className="absolute top-3 right-3 text-gray-500 hover:text-black"
+            aria-label="Close"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
           <h2 className="text-xl font-semibold">Download Brochure</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
@@ -72,14 +81,7 @@ const BrochureForm: React.FC<BrochureFormProps> = ({ isOpen, onClose }) => {
               onChange={handleChange}
               className="w-full border p-2 rounded"
             />
-            <input
-              type="tel"
-              name="phone"
-              required
-              placeholder="Phone Number"
-              onChange={handleChange}
-              className="w-full border p-2 rounded"
-            />
+
             <Button type="submit" className="w-full">
               Submit & Download
             </Button>
