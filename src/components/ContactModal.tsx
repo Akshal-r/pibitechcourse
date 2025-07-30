@@ -21,7 +21,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "", //
+    phone: "",
   });
 
   const handleInputChange = (field: string, value: string) => {
